@@ -1,5 +1,5 @@
 import { FETCH_CONTAINERS,RECEIVE_CONTAINERS } from '../actions/container';
-export default function helloReducer(state ={isFetching :false , containers : []}, action) {
+export default function containnerReducer(state ={isFetching :false , containers : []}, action) {
 
   switch (action.type) {
 

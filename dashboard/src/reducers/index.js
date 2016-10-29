@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
 
-import hello from './hello';
 
 import containers from './container';
+import images from './image';
 
 
 
 const rootReducer = combineReducers({
-    hello: hello,
-    containers : containers
+    containers : containers,
+    images : images
 
 });
 

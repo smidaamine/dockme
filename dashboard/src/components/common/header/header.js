@@ -10,6 +10,9 @@ const Header = () => {
                     <ul className="nav navbar-nav">
                         <li>
                             <StyledLink style="btn" to ="containers">Containners</StyledLink>
+                         </li>
+                         <li>
+                              <StyledLink style="btn" to ="images">Images</StyledLink>
                         </li>
 
                     </ul>

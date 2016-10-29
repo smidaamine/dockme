@@ -8,19 +8,18 @@ import { bindActionCreators } from 'redux';
 import style from './style.css';
 import { Link } from 'react-router';
 
-import * as helloActions from '../actions/hello';
 
 class App extends Component {
 
     constructor(props) {
         super(props);
-
     }
 
     render() {
         return (
             <div>
                 <Header />
+                
                 <div className="container">
 
                     {this.props.children}
