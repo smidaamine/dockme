@@ -3,12 +3,13 @@ import { combineReducers } from 'redux';
 
 import containers from './container';
 import images from './image';
-
+import dashboard from './dashboard';
 
 
 const rootReducer = combineReducers({
     containers : containers,
-    images : images
+    images : images,
+    dashboard:dashboard
 
 });
 

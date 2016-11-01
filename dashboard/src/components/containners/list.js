@@ -6,6 +6,7 @@ import Loader from '../common/loader/loader';
 import * as containerActions from '../../actions/container';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import StyledLink from "../common/styledLink";
 
 
 class List extends Component {
@@ -19,20 +20,24 @@ class List extends Component {
 
     getData(data) {
 
-        return data.map(e => [e.Id, e.Names, e.State, e.Status, e.Image]);
+        return data.map(e => [e.Id, e.Names, e.State, e.Status, e.Image,{type: "time", value : e.Created}]);
 
     }
 
     renderData() {
         return (
             <div className="row">
-            <div className="col-md-9">
+            <div>
+            <StyledLink to="containner" style="btn btn-primary">Create</StyledLink>
+            </div>
+            <div className="col-md-12">
                 <Table data={this.getData(this.props.containers)}>
                     <Header>ID</Header>
                     <Header>Names</Header>
                     <Header>STATE</Header>
                     <Header>STATUS</Header>
                     <Header>IMAGE</Header>
+                    <Header>Created</Header>
 
                 </Table>
                 </div>

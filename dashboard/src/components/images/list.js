@@ -7,6 +7,8 @@ import * as imageActions from '../../actions/images';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import Button from '../common/button';
+
 
 class List extends Component {
 
@@ -28,6 +30,7 @@ class List extends Component {
     renderData() {
         return (
             <div className="row">
+            <Button name="create"/>
             <div className="col-md-9">
                 <Table data={this.getData(this.props.images)}>
                     <Header>ID</Header>
