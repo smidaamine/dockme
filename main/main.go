@@ -20,10 +20,12 @@ func (a amine) String() string {
 }
 
 func main() {
+
 	router := httprouter.New()
 	router.GET("/", controller.Index)
 	router.GET("/containers", controller.Containers)
 	router.GET("/images", controller.Images)
+	router.GET("/hostmem", controller.Memory)
 	fmt.Println("server Running in ", 8083)
 	log.Fatal(http.ListenAndServe(":8083", router))
 
