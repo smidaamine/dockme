@@ -7,7 +7,7 @@ import { browserHistory } from 'react-router';
 const StyledLink = ({to, style, children}) => {
 
     return (
-        <a className={style} href ="" onClick={() => browserHistory.push(to)}> {children}</a>
+        <a className={style}  onClick={() => browserHistory.push(to)}> {children}</a>
     );
 };
 

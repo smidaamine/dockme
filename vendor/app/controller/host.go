@@ -18,7 +18,8 @@ type Host struct {
 func Memory(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 	me, err := mem.VirtualMemory()
-	c, err := cpu.Percent(-6, true)
+	c, err := cpu.Percent(-0, true)
+	nbCPU, _ := cpu.Counts(true)
 
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
@@ -31,7 +32,7 @@ func Memory(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		sum += value
 	}
 
-	v := Host{me.UsedPercent, sum}
+	v := Host{me.UsedPercent, sum / float64(nbCPU)}
 	if err := json.NewEncoder(w).Encode(v); err != nil {
 		fmt.Println(err)
 		w.WriteHeader(http.StatusBadRequest)

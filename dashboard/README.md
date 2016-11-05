@@ -1,5 +1,4 @@
-# react-boilerplate
-React app boilerplate
+# Dashboard
 
 - [x] [Webpack](https://webpack.github.io)
 - [x] [React](https://facebook.github.io/react/)

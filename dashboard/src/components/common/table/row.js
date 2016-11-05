@@ -1,6 +1,9 @@
 
 import React, { Component, PropTypes } from 'react';
 import moment from 'moment';
+
+//Format timestamp
+//TODO move the formating to another component its not a common component
 function getRow(elemnt) {
     return (
 

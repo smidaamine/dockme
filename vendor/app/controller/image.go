@@ -1,7 +1,8 @@
 package controller
 
 import (
-	"app/dockerAPI/image"
+	"app/dockerCl"
+
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -10,7 +11,7 @@ import (
 )
 
 func Images(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
-	images, err := image.GetImages()
+	images, err := dockerCl.GetImages()
 	if err != nil {
 
 		w.WriteHeader(http.StatusInternalServerError)

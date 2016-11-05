@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import Chart from './chart';
 import Highcharts from "highcharts";
 import Solidgauge from 'highcharts/highcharts-more';
@@ -19,7 +19,7 @@ let Gauge = ({data, title, seriesTitle, containnerName}) => {
             },
 
             title: {
-                text: 'Memory'
+                text: ''
             },
 
             pane: {
@@ -60,13 +60,13 @@ let Gauge = ({data, title, seriesTitle, containnerName}) => {
                 min: 0,
                 max: 100,
 
-            
+
                 minorTickWidth: 1,
                 minorTickLength: 10,
                 minorTickPosition: 'inside',
                 minorTickColor: '#666',
 
-                
+
                 tickWidth: 2,
                 tickPosition: 'inside',
                 tickLength: 10,
@@ -97,7 +97,7 @@ let Gauge = ({data, title, seriesTitle, containnerName}) => {
             },
 
             series: [{
-                name: 'Memory',
+                name: '',
                 data: [100],
                 tooltip: {
                     valueSuffix: ' %'
@@ -116,9 +116,18 @@ let Gauge = ({data, title, seriesTitle, containnerName}) => {
     options.title.text = title;
 
     return (
-        <Chart container={containnerName} options={options} modules={[Solidgauge]} data={data}/>
+        <Chart container={containnerName} options={options} modules={[Solidgauge]} data={data} />
     );
 };
+
+
+Gauge.propTypes = {
+    data: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    seriesTitle: PropTypes.string.isRequired,
+    containnerName: PropTypes.string.isRequired
+};
+
 
 export default Gauge;
 

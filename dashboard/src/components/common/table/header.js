@@ -1,9 +1,12 @@
 
-import React , {Component,PropTypes} from 'react';
+import React , {PropTypes} from 'react';
 
-const Header = ({fieldName,children})=>{
+const Header = ({children})=>{
     return(
         <th>{children}</th>
     );
 };
+Header.propTypes = {
+    children : PropTypes.node.isRequired,
+}
 export default Header;

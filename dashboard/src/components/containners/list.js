@@ -8,7 +8,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import StyledLink from "../common/styledLink";
 
-
+/**
+ * Component list all docker containners 
+ */
 class List extends Component {
     constructor(props) {
         super(props);
@@ -20,26 +22,26 @@ class List extends Component {
 
     getData(data) {
 
-        return data.map(e => [e.Id, e.Names, e.State, e.Status, e.Image,{type: "time", value : e.Created}]);
+        return data.map(e => [e.Id, e.Names, e.State, e.Status, e.Image, { type: "time", value: e.Created }]);
 
     }
 
     renderData() {
         return (
             <div className="row">
-            <div>
-            <StyledLink to="containner" style="btn btn-primary">Create</StyledLink>
-            </div>
-            <div className="col-md-12">
-                <Table data={this.getData(this.props.containers)}>
-                    <Header>ID</Header>
-                    <Header>Names</Header>
-                    <Header>STATE</Header>
-                    <Header>STATUS</Header>
-                    <Header>IMAGE</Header>
-                    <Header>Created</Header>
+                <div>
+                    <StyledLink to="containner" style="btn btn-primary">Create</StyledLink>
+                </div>
+                <div className="col-md-12">
+                    <Table data={this.getData(this.props.containers)}>
+                        <Header>ID</Header>
+                        <Header>Names</Header>
+                        <Header>STATE</Header>
+                        <Header>STATUS</Header>
+                        <Header>IMAGE</Header>
+                        <Header>Created</Header>
 
-                </Table>
+                    </Table>
                 </div>
             </div>
         );
@@ -58,8 +60,8 @@ class List extends Component {
 
 
 List.propTypes = {
-    actions : PropTypes.object,
-    containers : PropTypes.array,
+    actions: PropTypes.object,
+    containers: PropTypes.array,
     isFetching: PropTypes.bool
 };
 function mapStateToprops(state) {

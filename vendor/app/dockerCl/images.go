@@ -1,4 +1,6 @@
-package image
+package dockerCl
+
+
 
 import (
 	"github.com/docker/docker/api/types"
